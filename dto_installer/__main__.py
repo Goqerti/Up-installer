@@ -26,7 +26,7 @@ def connect (api):
     return heroku_conn
 
 def createApp (connect):
-    appname = "dto" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
+    appname = "up" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
     try:
         connect.create_app(name=appname, stack_id_or_name='container', region_id_or_name="eu")
     except requests.exceptions.HTTPError:
@@ -106,9 +106,9 @@ if __name__ == "__main__":
     stringlength=len(str1)
     slicedString=str1[stringlength::-1]
 
-    if os.path.isdir("./dtouserbot/"):
-        rm_r("./dtouserbot/")
-    repo = Repo.clone_from(slicedString,"./dtouserbot/", branch="master")
+    if os.path.isdir("./userator/"):
+        rm_r("./userator/")
+    repo = Repo.clone_from(slicedString,"./userator/", branch="main")
     basarili(LANG['DOWNLOADED'])
     onemli(LANG['DEPLOYING'])
     app = hgit(heroku, repo, appname)
@@ -145,7 +145,7 @@ if __name__ == "__main__":
     config['TMP_DOWNLOAD_DIRECTORY'] = "./downloads/"
     config['TZ'] = TZ
     config['TZ_NUMBER'] = "1"
-    config['UPSTREAM_REPO_URL'] = "https://github.com/sahibziko/userator"
+    config['UPSTREAM_REPO_URL'] = "https://github.com/goqerti/userator"
     config['WARN_LIMIT'] = "3"
     config['WARN_MODE'] = "gmute"
     config['LANGUAGE'] = LANGUAGE
