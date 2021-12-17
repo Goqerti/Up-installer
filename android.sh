@@ -1,4 +1,4 @@
-MESAJ="🤖 USERATOR / AUTO / QURULUM 🐍"
+MESAJ="🤖 U S Σ R Δ T O R / AUTO / QURULUM 🐍"
 MESAJ="Kanalımız: t.me/UseratorOT ✅"
 MESAJ="Bizi seçdiyiniz üçün təşəkkürlər🤗"
 pkg update -y
