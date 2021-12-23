@@ -1,4 +1,4 @@
-MESAJ="U S E R A T O R / S T R İ N G"
+MESAJ="U S Σ R Δ T O R / S T R İ N G 💣"
 MESAJ+="\nTelegram: @UseratorOT"
 pkg upgrade
 clear
