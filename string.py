@@ -15,9 +15,9 @@ pip install bs4
 clear
 echo -e $MESAJ
 echo "Fayl yazılır..."
-curl "https://raw.githubusercontent.com/Goqerti/Up-installer/master/string.sh" --output "string.sh"
+curl "https://raw.githubusercontent.com/Goqerti/Up-installer/master/string.py" --output "string.py"
 clear
 echo -e $MESAJ
 echo "Qurulum Bitdi! İndi String Ala Bilərsiz."
 clear
-python string.sh
+python string.py
