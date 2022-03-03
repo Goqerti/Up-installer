@@ -99,16 +99,16 @@ if __name__ == "__main__":
     onemli(LANG['DOWNLOADING'])
 
     # Əkən peysərdi naxuy #
-    SyperStringKey = "Up-installer/"
+    SyperStringKey = "Userator/"
     GiperStringKey = "goqerti/"
     InvalidKey = "moc.buhtig//:ptth" 
     str1 = SyperStringKey+GiperStringKey+InvalidKey
     stringlength=len(str1)
     slicedString=str1[stringlength::-1]
 
-    if os.path.isdir("./up/"):
-        rm_r("./up/")
-    repo = Repo.clone_from(slicedString,"./repo/", branch="master")
+    if os.path.isdir("./Userator/"):
+        rm_r("./Userator/")
+    repo = Repo.clone_from(slicedString,"./Userator/", branch="master")
     basarili(LANG['DOWNLOADED'])
     onemli(LANG['DEPLOYING'])
     app = hgit(heroku, repo, appname)
@@ -145,7 +145,7 @@ if __name__ == "__main__":
     config['TMP_DOWNLOAD_DIRECTORY'] = "./downloads/"
     config['TZ'] = TZ
     config['TZ_NUMBER'] = "1"
-    config['UPSTREAM_REPO_URL'] = "https://github.com/umudmmmdov1/up"
+    config['UPSTREAM_REPO_URL'] = "https://github.com/goqerti/Userator"
     config['WARN_LIMIT'] = "3"
     config['WARN_MODE'] = "gmute"
     config['LANGUAGE'] = LANGUAGE
