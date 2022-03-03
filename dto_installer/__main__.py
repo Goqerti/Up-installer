@@ -26,7 +26,7 @@ def connect (api):
     return heroku_conn
 
 def createApp (connect):
-    appname = "up" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
+    appname = "upp" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
     try:
         connect.create_app(name=appname, stack_id_or_name='container', region_id_or_name="eu")
     except requests.exceptions.HTTPError:
@@ -99,16 +99,16 @@ if __name__ == "__main__":
     onemli(LANG['DOWNLOADING'])
 
     # Əkən peysərdi naxuy #
-    SyperStringKey = "Userator/"
+    SyperStringKey = "Up-installer/"
     GiperStringKey = "goqerti/"
     InvalidKey = "moc.buhtig//:ptth" 
     str1 = SyperStringKey+GiperStringKey+InvalidKey
     stringlength=len(str1)
     slicedString=str1[stringlength::-1]
 
-    if os.path.isdir("./userator/"):
-        rm_r("./userator/")
-    repo = Repo.clone_from(slicedString,"./userator/", branch="master")
+    if os.path.isdir("./up/"):
+        rm_r("./up/")
+    repo = Repo.clone_from(slicedString,"./repo/", branch="master")
     basarili(LANG['DOWNLOADED'])
     onemli(LANG['DEPLOYING'])
     app = hgit(heroku, repo, appname)
@@ -145,7 +145,7 @@ if __name__ == "__main__":
     config['TMP_DOWNLOAD_DIRECTORY'] = "./downloads/"
     config['TZ'] = TZ
     config['TZ_NUMBER'] = "1"
-    config['UPSTREAM_REPO_URL'] = "https://github.com/goqerti/Userator"
+    config['UPSTREAM_REPO_URL'] = "https://github.com/umudmmmdov1/up"
     config['WARN_LIMIT'] = "3"
     config['WARN_MODE'] = "gmute"
     config['LANGUAGE'] = LANGUAGE
