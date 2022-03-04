@@ -6,7 +6,7 @@ from time import time
 import random
 import requests
 from git import Repo
-from alpha_installer import *
+from dto_installer import *
 from .astring import main
 import os
 from telethon import TelegramClient, functions
