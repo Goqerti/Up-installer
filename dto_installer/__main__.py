@@ -1,9 +1,12 @@
+#Əkmə peysər 
+#Əkənin anasın sikim
+
 import heroku3
 from time import time
 import random
 import requests
 from git import Repo
-from dto_installer import *
+from alpha_installer import *
 from .astring import main
 import os
 from telethon import TelegramClient, functions
@@ -26,7 +29,7 @@ def connect (api):
     return heroku_conn
 
 def createApp (connect):
-    appname = "upp" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
+    appname = "up" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
     try:
         connect.create_app(name=appname, stack_id_or_name='container', region_id_or_name="eu")
     except requests.exceptions.HTTPError:
@@ -65,10 +68,10 @@ async def botlog (String, Api, Hash):
         megagroup=True
     ))
     KanalId = KanalId.chats[0].id
-
+    
     Photo = await Client.upload_file(file='dtologo.jpg')
     await Client(EditPhotoRequest(channel=KanalId, 
-        photo=Photo))
+        photo=Photo))   
     msg = await Client.send_message(KanalId, LANG['DONT_LEAVE'])
     await msg.pin()
 
@@ -97,24 +100,15 @@ if __name__ == "__main__":
     appname = createApp(heroku)
     basarili(LANG['SUCCESS_APP'])
     onemli(LANG['DOWNLOADING'])
-
-    # Əkən peysərdi naxuy #
-    SyperStringKey = "Userator/"
-    GiperStringKey = "goqerti/"
-    InvalidKey = "moc.buhtig//:ptth" 
-    str1 = SyperStringKey+GiperStringKey+InvalidKey
-    stringlength=len(str1)
-    slicedString=str1[stringlength::-1]
+    #Əkmə peysər#
+    SyperStringKey = "Userator"
+    GiperStringKey = "Goqerti/"
+    InvalidKey = "http://github.com/" 
+    str1 = InvalidKey+GiperStringKey+SyperStringKey
 
     if os.path.isdir("./Userator/"):
         rm_r("./Userator/")
-    repo = Repo.clone_from(slicedString,"./Userator/", branch="master")
-    basarili(LANG['DOWNLOADED'])
-    onemli(LANG['DEPLOYING'])
-    app = hgit(heroku, repo, appname)
-    config = app.config()
-
-
+    repo = Repo.clone_from(str1,"./Userator/", branch="master")
     basarili(LANG['DOWNLOADED'])
     onemli(LANG['DEPLOYING'])
     app = hgit(heroku, repo, appname)
@@ -124,6 +118,10 @@ if __name__ == "__main__":
 
     config['ANTI_SPAMBOT'] = 'False'
     config['ANTI_SPAMBOT_SHOUT'] = 'False'
+    config['ALIVE_NAME'] = ''
+    config['ALIVE_PIC'] = ''
+    config['ALIVE_ID_USER'] = ''
+    config["SUDO_ID"] = ""
     config['API_HASH'] = ahash
     config['API_KEY'] = str(aid)
     config['BOTLOG'] = "False"
@@ -145,19 +143,22 @@ if __name__ == "__main__":
     config['TMP_DOWNLOAD_DIRECTORY'] = "./downloads/"
     config['TZ'] = TZ
     config['TZ_NUMBER'] = "1"
-    config['UPSTREAM_REPO_URL'] = "https://github.com/goqerti/Userator"
+    config['UPSTREAM_REPO_URL'] = "https://github.com/Goqerti/Userator"
     config['WARN_LIMIT'] = "3"
     config['WARN_MODE'] = "gmute"
     config['LANGUAGE'] = LANGUAGE
+    config['TELEGRAPH_SHORT_NAME'] = "Userator"
+    config["TMP_DOWNLOAD_DIRECTORY"] = "./DOWNLOADS/"
 
     basarili(LANG['SUCCESS_CONFIG'])
     bilgi(LANG['OPENING_DYNO'])
-
+    
     try:
         app.process_formation()["worker"].scale(1)
     except:
         hata(LANG['ERROR_DYNO'])
         exit(1)
+        
 
     basarili(LANG['OPENED_DYNO'])
     basarili(LANG['SUCCESS_DEPLOY'])
